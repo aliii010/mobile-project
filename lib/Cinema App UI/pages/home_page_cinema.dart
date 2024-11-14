@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_ui_design/Cinema%20App%20UI/consts.dart';
 import 'package:flutter_ui_design/Cinema%20App%20UI/models/category_model.dart';
 import 'package:flutter_ui_design/Cinema%20App%20UI/pages/detail_page.dart';
-
+import '../pages/genre_movies_page.dart';
 import '../models/movie_model.dart';
 
 class HomePageCinema extends StatefulWidget {
@@ -199,30 +199,51 @@ class _HomePageCinemaState extends State<HomePageCinema> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
         categories.length,
-        (index) => Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: Colors.white10.withOpacity(0.05),
-                borderRadius: BorderRadius.circular(15),
+        (index) => GestureDetector(
+          onTap: () {
+            // Filter movies based on selected category genre
+            String selectedGenre = categories[index].name;
+            List<Movie> genreMovies = movies
+                .where((movie) =>
+                    movie.genre.toLowerCase() == selectedGenre.toLowerCase())
+                .toList();
+
+            // Navigate to GenreMoviesPage
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => GenreMoviesPage(
+                  genre: selectedGenre,
+                  genreMovies: genreMovies,
+                ),
               ),
-              child: Image.asset(
-                categories[index].emoji,
-                fit: BoxFit.cover,
-                height: 30,
-                width: 30,
+            );
+          },
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: Colors.white10.withOpacity(0.05),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Image.asset(
+                  categories[index].emoji,
+                  fit: BoxFit.cover,
+                  height: 30,
+                  width: 30,
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              categories[index].name,
-              style: const TextStyle(
-                fontSize: 14,
-                color: Colors.white,
+              const SizedBox(height: 10),
+              Text(
+                categories[index].name,
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: Colors.white,
+                ),
               ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_design/Cinema%20App%20UI/consts.dart';
 import 'package:flutter_ui_design/Cinema%20App%20UI/models/movie_model.dart';
 import 'package:flutter_ui_design/Cinema%20App%20UI/pages/home_page_cinema.dart';
 
@@ -53,7 +54,7 @@ class MovieCheckoutPage extends StatelessWidget {
           'Checkout',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: const Color.fromARGB(255, 57, 57, 57),
+        backgroundColor: appBackgroundColor,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -272,7 +273,7 @@ class CheckoutButton extends StatelessWidget {
           );
         },
         child: const Text('Confirm Purchase',
-            style: TextStyle(fontSize: 18, color: Colors.amber)),
+            style: TextStyle(fontSize: 18, color: buttonColor)),
       ),
     );
   }
