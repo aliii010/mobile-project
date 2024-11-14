@@ -41,7 +41,7 @@ class MovieDetailPage extends StatelessWidget {
                       tag: movie.poster,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(25),
-                        child: Image.network(
+                        child: Image.asset(
                           movie.poster,
                         ),
                       ),
@@ -126,7 +126,7 @@ class MovieDetailPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const ReservationScreen(),
+                  builder: (_) => ReservationScreen(movie: movie),
                 ),
               );
             },

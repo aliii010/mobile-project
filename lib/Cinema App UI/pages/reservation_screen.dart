@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_design/Cinema%20App%20UI/consts.dart';
+import 'package:flutter_ui_design/Cinema%20App%20UI/pages/cheackout.dart';
 import 'package:intl/intl.dart';
 import '../Widget/seat_status.dart';
+import 'package:flutter_ui_design/Cinema%20App%20UI/models/movie_model.dart';
 import '../models/seats_model.dart';
 
 class ReservationScreen extends StatefulWidget {
-  const ReservationScreen({super.key});
+  const ReservationScreen({
+    super.key,
+    required this.movie,
+  });
+  final Movie movie;
 
   @override
   State<ReservationScreen> createState() => _ReservationScreenState();
@@ -131,7 +137,8 @@ class _ReservationScreenState extends State<ReservationScreen> {
           const Spacer(),
           Container(
             width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 35),
+            padding: EdgeInsets.symmetric(
+                vertical: MediaQuery.sizeOf(context).height * .02),
             decoration: BoxDecoration(
               color: Colors.grey.withOpacity(0.1),
               borderRadius: const BorderRadius.vertical(
@@ -147,7 +154,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 35),
+                SizedBox(height: MediaQuery.sizeOf(context).height * .02),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -218,7 +225,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 35),
+                SizedBox(height: MediaQuery.sizeOf(context).height * .035),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -310,13 +317,29 @@ class _ReservationScreenState extends State<ReservationScreen> {
                               color: buttonColor,
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            child: const Center(
-                              child: Text(
-                                'Continue',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                            child: Center(
+                              child: TextButton(
+                                onPressed: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return MovieCheckoutApp(
+                                      seats: selectedSeats,
+                                      price:
+                                          "\$${selectedSeats.length * 20}.00",
+                                      date:
+                                          "${selectedTime.month}/${selectedTime.day}/${selectedTime.year}",
+                                      hour: selectedTime.hour.toString(),
+                                      movie: widget.movie,
+                                    );
+                                  }));
+                                },
+                                child: const Text(
+                                  'Continue',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),

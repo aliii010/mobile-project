@@ -149,7 +149,7 @@ class _HomePageCinemaState extends State<HomePageCinema> {
                                       tag: movie.poster,
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(25),
-                                        child: Image.network(
+                                        child: Image.asset(
                                           movie.poster,
                                           height: 300,
                                           width: 205,
@@ -268,7 +268,7 @@ class _HomePageCinemaState extends State<HomePageCinema> {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: "Welcome Angelina ",
+                        text: "Welcome Ibrahim ",
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
@@ -306,8 +306,8 @@ class _HomePageCinemaState extends State<HomePageCinema> {
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
                   fit: BoxFit.cover,
-                  image: NetworkImage(
-                    "https://t3.ftcdn.net/jpg/06/07/84/82/240_F_607848231_w5iFN4tMmtI2woJjMh7Q8mGvgARnzHgQ.jpg",
+                  image: AssetImage(
+                    "assets/cinema/ibrahim.jpg",
                   ),
                 ),
               ),

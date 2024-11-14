@@ -15,8 +15,7 @@ class Movie {
 
 List<Movie> movies = [
   Movie(
-    poster:
-        'https://rukminim2.flixcart.com/image/850/1000/jf8khow0/poster/a/u/h/small-hollywood-movie-poster-blade-runner-2049-ridley-scott-original-imaf3qvx88xenydd.jpeg?q=20&crop=false',
+    poster: 'assets/movies/blade-runner.jpeg',
     title: 'Blade Runner 2049 ',
     genre: 'Action',
     synopsis: synopsis,
@@ -24,8 +23,7 @@ List<Movie> movies = [
     duration: 120,
   ),
   Movie(
-    poster:
-        'https://musicart.xboxlive.com/7/bb341200-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080',
+    poster: 'assets/movies/Minions.jpg',
     title: 'Minions : Despicable Me 2',
     genre: "Comedy",
     synopsis: synopsis,
@@ -33,8 +31,7 @@ List<Movie> movies = [
     duration: 110,
   ),
   Movie(
-    poster:
-        'https://www.filmsourcing.com/wp-content/uploads/2013/03/comedy-poster-tutorial-5.jpg',
+    poster: 'assets/movies/Create-the-scene.jpg',
     title: ' Create the scene (and polish)',
     genre: 'Action',
     synopsis: synopsis,
@@ -42,15 +39,14 @@ List<Movie> movies = [
     duration: 130,
   ),
   Movie(
-      poster:
-          'https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL75_UX380_CR0,0,380,562_.jpg',
+      poster: 'assets/movies/Joker.jpg',
       title: 'Joker (2019)',
       genre: 'Criminal',
       synopsis: synopsis,
       rating: 8.9,
       duration: 140),
   Movie(
-    poster: 'https://m.media-amazon.com/images/I/A1jNECCCyUL.jpg',
+    poster: 'assets/movies/Blue-Beetle.jpg',
     title: 'Blue Beetle',
     genre: 'Drama',
     synopsis: synopsis,
