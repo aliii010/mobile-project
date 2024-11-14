@@ -52,7 +52,22 @@ List<Movie> movies = [
     synopsis: synopsis,
     rating: 7.5,
     duration: 150,
-  )
+  ),
+  Movie(
+    poster: 'assets/movies/titanic.jpg',
+    title: 'Titanic',
+    genre: 'Romance',
+    synopsis: synopsis,
+    rating: 7.9,
+    duration: 180,
+  ),
+  Movie(
+      poster: 'assets/movies/it.jpg',
+      title: 'IT',
+      genre: 'Horror',
+      synopsis: synopsis,
+      rating: 7.3,
+      duration: 120),
 ];
 const String synopsis =
     "Synopsis: In the year 2147, humanity lives in a dystopian society where time is the only currency. Evelyn Carter, a brilliant but disillusioned scientist, discovers a way to manipulate time itself. Facing relentless pressure from the authoritarian Timekeepers, who control society by regulating time access, Evelyn is thrust into a high-stakes game of cat and mouse.\nAs Evelyn tries to use her discovery to upend the oppressive system, she forms an unlikely alliance with Rafael, a former Timekeeper turned rebel. Together, they navigate a labyrinth of deceit and danger, striving to ignite a revolution that could alter the fabric of time and reclaim freedom for the oppressed.\nAmidst the chaos, Evelyn confronts her own past and questions the true cost of her invention. The Timekeeper explores themes of power, sacrifice, and the relentless pursuit of justice in a world where every second counts.";
