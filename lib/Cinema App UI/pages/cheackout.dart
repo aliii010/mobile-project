@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_design/Cinema%20App%20UI/consts.dart';
 import 'package:flutter_ui_design/Cinema%20App%20UI/models/movie_model.dart';
-import 'package:flutter_ui_design/Cinema%20App%20UI/pages/home_page_cinema.dart';
+import 'package:flutter_ui_design/Cinema%20App%20UI/pages/cinema_main_screen.dart';
 
 class MovieCheckoutApp extends StatelessWidget {
   const MovieCheckoutApp(
@@ -263,7 +263,7 @@ class CheckoutButton extends StatelessWidget {
                     Navigator.of(context).pop();
                     Navigator.pushAndRemoveUntil(context,
                         MaterialPageRoute(builder: (context) {
-                      return const HomePageCinema();
+                      return const CinemaMainScreen();
                     }), (route) => false);
                   },
                   child: const Text('OK'),
