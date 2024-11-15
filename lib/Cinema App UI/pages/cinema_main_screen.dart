@@ -23,8 +23,8 @@ class _CinemaMainScreenState extends State<CinemaMainScreen> {
   late final List<Widget> page;
   @override
   void initState() {
-    page = [ 
-        const HomePageCinema(),
+    page = [
+      const HomePageCinema(),
       navBarPage(CupertinoIcons.compass_fill),
       navBarPage(CupertinoIcons.ticket_fill),
       navBarPage(Icons.person_rounded),

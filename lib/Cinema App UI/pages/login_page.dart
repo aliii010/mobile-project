@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_design/Cinema%20App%20UI/pages/home_page_cinema.dart';
+import 'package:flutter_ui_design/Cinema%20App%20UI/pages/cinema_main_screen.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
@@ -55,7 +55,7 @@ class LoginPage extends StatelessWidget {
                   // Navigate to HomePage
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePageCinema()),
+                    MaterialPageRoute(builder: (context) => CinemaMainScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -147,7 +147,7 @@ class SignUpPage extends StatelessWidget {
                   // Navigate to HomePage
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePageCinema()),
+                    MaterialPageRoute(builder: (context) => CinemaMainScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -181,4 +181,3 @@ class SignUpPage extends StatelessWidget {
     );
   }
 }
-
